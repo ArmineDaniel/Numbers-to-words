@@ -66,7 +66,7 @@ namespace Numbers_to_words
                 }
                 else
                 {
-                    tens = test(num.ToString());
+                    tens = word(num.ToString());
                 }
                 wordsBox.Text = trillion + billion + million + thousand + hundred + tens;  //Get number to word
             }
@@ -108,14 +108,14 @@ namespace Numbers_to_words
             {
                 string a;
                 string b;
-                string c = test(number[2].ToString());
+                string c = word(number[2].ToString());
                 if (number[0] == '1')
                 {
                     a = "հարյուր";
                 }
                 else
                 {
-                    a = test(number[0].ToString()) + " հարյուր";
+                    a = word(number[0].ToString()) + " հարյուր";
                 }
                 if (number[1] == '1' && number[2] != '0')
                 {
@@ -123,21 +123,21 @@ namespace Numbers_to_words
                 }
                 else
                 {
-                    b = test(number[1].ToString() + "0");
+                    b = word(number[1].ToString() + "0");
                 }
                 numword = a + " " + b + c + " " + type;
             }
             else if (number.Length == 2)
             {
                 string a;
-                string b = test(number[1].ToString());
+                string b = word(number[1].ToString());
                 if (number[0] == '1' && number[1] != '0')
                 {
                     a = "տասն";
                 }
                 else
                 {
-                    a = test(number[0].ToString() + "0");
+                    a = word(number[0].ToString() + "0");
                 }
                 numword = a + b + " " + type;
             }
@@ -150,7 +150,7 @@ namespace Numbers_to_words
                 }
                 else
                 {
-                    a = test(number[0].ToString()) + " " + type;
+                    a = word(number[0].ToString()) + " " + type;
                 }
                 numword = a + " ";
             }
@@ -158,7 +158,7 @@ namespace Numbers_to_words
         }
 
         //Numbers convert to string.
-        static String test(string digi)
+        static String word(string digi)
         {
             switch (digi)
             {
